@@ -1,0 +1,5 @@
+tensorflow==2.16.1
+Flask==2.3.3
+pandas==2.2.1
+joblib==1.4.0
+

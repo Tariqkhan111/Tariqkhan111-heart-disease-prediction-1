@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Heart Disease Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Heart Disease Risk Assessment</h1>
+        <form action="/predict" method="POST">
+            <!-- Numerical Features -->
+            <div class="form-group">
+                <label>Age (Years):</label>
+                <input type="number" name="age" min=29 max=77 required 
+                       placeholder="29-77 years">
+            </div>
+
+            <div class="form-group">
+                <label>Resting BP (mm Hg):</label>
+                <input type="number" name="trestbps" min=94 max=200 required
+                       placeholder="94-200 mmHg">
+            </div>
+
+            <div class="form-group">
+                <label>Cholesterol (mg/dl):</label>
+                <input type="number" name="chol" min=126 max=564 required
+                       placeholder="126-564 mg/dl">
+            </div>
+
+            <div class="form-group">
+                <label>Max Heart Rate:</label>
+                <input type="number" name="thalach" min=71 max=202 required
+                       placeholder="71-202 bpm">
+            </div>
+
+            <div class="form-group">
+                <label>Oldpeak (ST Depression):</label>
+                <input type="number" step="0.1" name="oldpeak" min=0 max=6.2 required
+                       placeholder="0-6.2">
+            </div>
+
+            <!-- Categorical Features -->
+            <div class="form-group">
+                <label>Sex:</label>
+                <select name="sex" required>
+                    <option value="0">Female (32%)</option>
+                    <option value="1" selected>Male (68%)</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Chest Pain Type:</label>
+                <select name="cp" required>
+                    <option value="0">Typical Angina (49%)</option>
+                    <option value="1">Atypical Angina (16%)</option>
+                    <option value="2">Non-Anginal Pain (28%)</option>
+                    <option value="3">Asymptomatic (7%)</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Fasting Blood Sugar:</label>
+                <select name="fbs" required>
+                    <option value="0" selected>≤ 120 mg/dl (85%)</option>
+                    <option value="1">> 120 mg/dl (15%)</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Resting ECG:</label>
+                <select name="restecg" required>
+                    <option value="0">Normal (49%)</option>
+                    <option value="1" selected>ST-T Abnormality (50%)</option>
+                    <option value="2">LV Hypertrophy (1%)</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Exercise Angina:</label>
+                <select name="exang" required>
+                    <option value="0" selected>No (66%)</option>
+                    <option value="1">Yes (34%)</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>ST Slope:</label>
+                <select name="slope" required>
+                    <option value="1" selected>Flat (47%)</option>
+                    <option value="2">Down (46%)</option>
+                    <option value="0">Up (7%)</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Major Vessels (ca):</label>
+                <input type="number" name="ca" min=0 max=4 required
+                       placeholder="0-4 vessels">
+            </div>
+
+            <div class="form-group">
+                <label>Thalassemia:</label>
+                <select name="thal" required>
+                    <option value="2" selected>Reversible Defect (53%)</option>
+                    <option value="3">Fixed Defect (40%)</option>
+                    <option value="1">Normal (6%)</option>
+                    <option value="0">Other (1%)</option>
+                </select>
+            </div>
+
+            <button type="submit">Predict Heart Disease Risk</button>
+        </form>
+    </div>
+</body>
+</html>

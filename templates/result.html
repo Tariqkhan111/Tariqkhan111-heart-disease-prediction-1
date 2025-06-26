@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Prediction Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Prediction Result</h1>
+        <div class="result">
+            {% if prediction == 1 %}
+                <p class="danger">⚠️ High Risk of Heart Disease ({{ probability }})</p>
+            {% else %}
+                <p class="safe">✅ Low Risk of Heart Disease ({{ probability }})</p>
+            {% endif %}
+        </div>
+        <a href="/">Back to Assessment</a>
+    </div>
+</body>
+</html>
